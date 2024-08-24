@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alpha">A%</string>
+    <string name="red">R</string>
+    <string name="green">G</string>
+    <string name="blue">B</string>
+    <string name="hex">Hex</string>
+    <string name="number_sign">#</string>
+</resources>

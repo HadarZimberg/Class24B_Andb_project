@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/primary_margin"
+    android:background="@android:color/transparent"
+    app:cardCornerRadius="@dimen/corner_radius"
+    app:cardElevation="@dimen/card_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/primary_padding">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_BTN_heart"
+            android:layout_width="@dimen/heart_radius"
+            android:layout_height="@dimen/heart_radius"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/empty_heart" />
+
+        <com.example.colorpicker.ColorPickerView
+            android:id="@+id/main_CPV_wheel"
+            android:layout_width="@dimen/color_wheel_radius"
+            android:layout_height="@dimen/color_wheel_radius"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/primary_margin"
+            android:elevation="@dimen/wheel_elevation" />
+
+        <com.example.colorpicker.ColorSliderView
+            android:id="@+id/main_CSV_shade"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/slider_height"
+            android:layout_below="@id/main_CPV_wheel"
+            android:layout_margin="@dimen/secondary_margin"
+            android:layout_toEndOf="@id/main_SIV_preview" />
+
+        <com.example.colorpicker.ColorSliderView
+            android:id="@+id/main_CSV_transparency"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/slider_height"
+            android:layout_below="@id/main_CSV_shade"
+            android:layout_marginHorizontal="@dimen/secondary_margin"
+            android:layout_toEndOf="@id/main_SIV_preview" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_SIV_preview"
+            android:layout_width="@dimen/preview_radius"
+            android:layout_height="@dimen/preview_radius"
+            android:layout_below="@id/main_CPV_wheel"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/secondary_margin"
+            android:background="@android:color/white"
+            android:padding="@dimen/secondary_padding"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="@dimen/stroke_width" />
+
+        <LinearLayout
+            android:id="@+id/main_LL_rgb"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rgb_height"
+            android:layout_below="@id/main_CSV_transparency"
+            android:layout_marginTop="@dimen/primary_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/alpha"
+                    android:textStyle="bold" />
+
+                <NumberPicker
+                    android:id="@+id/main_NP_alpha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/picker_margin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/primary_margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/red"
+                    android:textStyle="bold" />
+
+                <NumberPicker
+                    android:id="@+id/main_NP_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/picker_margin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/primary_margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/green"
+                    android:textStyle="bold" />
+
+                <NumberPicker
+                    android:id="@+id/main_NP_green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/picker_margin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/primary_margin"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/blue"
+                    android:textStyle="bold" />
+
+                <NumberPicker
+                    android:id="@+id/main_NP_blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/picker_margin" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_LL_hex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_LL_rgb"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/primary_margin"
+                android:text="@string/hex"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="@dimen/hex_width"
+                android:layout_height="@dimen/hex_height"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingHorizontal="@dimen/secondary_padding"
+                    android:text="@string/number_sign"
+                    android:textSize="@dimen/number_sign_size"
+                    android:textStyle="bold" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_1"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_2"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_3"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_4"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_5"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+                <com.example.colorpicker.HexNumberPicker
+                    android:id="@+id/main_HNP_6"
+                    android:layout_width="@dimen/hex_picker_width"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_LL_hex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/primary_margin"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved1"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved2"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved3"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved4"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved5"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved6"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved7"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved8"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved9"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved10"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved11"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved12"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved13"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_SIV_saved14"
+                    android:layout_width="@dimen/saved_color_radius"
+                    android:layout_height="@dimen/saved_color_radius"
+                    android:layout_margin="@dimen/secondary_margin"
+                    android:padding="@dimen/secondary_padding"
+                    app:shapeAppearanceOverlay="@style/circleImageView"
+                    app:strokeColor="@android:color/black"
+                    app:strokeWidth="@dimen/stroke_width" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

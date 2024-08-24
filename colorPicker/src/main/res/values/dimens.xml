@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="color_wheel_radius">200dp</dimen>
+    <dimen name="wheel_elevation">8dp</dimen>
+    <dimen name="primary_margin">16dp</dimen>
+    <dimen name="corner_radius">24dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="primary_padding">16dp</dimen>
+    <dimen name="heart_radius">50dp</dimen>
+    <dimen name="slider_height">40dp</dimen>
+    <dimen name="secondary_margin">8dp</dimen>
+    <dimen name="preview_radius">80dp</dimen>
+    <dimen name="secondary_padding">2dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="rgb_height">100dp</dimen>
+    <dimen name="picker_margin">4dp</dimen>
+    <dimen name="hex_width">240dp</dimen>
+    <dimen name="hex_height">75dp</dimen>
+    <dimen name="number_sign_size">24sp</dimen>
+    <dimen name="hex_picker_width">36dp</dimen>
+    <dimen name="saved_color_radius">32dp</dimen>
+</resources>
